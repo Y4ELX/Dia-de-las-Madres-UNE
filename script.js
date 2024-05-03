@@ -8,6 +8,54 @@ var w = c.width = window.innerWidth,
 
 ctx.imageSmoothingEnabled = true;
 
+document.addEventListener("DOMContentLoaded", function () {
+	setTimeout(function () {
+		var div = document.createElement("div");
+		var img = document.createElement("img");
+		var p = document.createElement("p");
+
+		img.src = "img/une.png";
+		img.style.height = "7vh";
+		img.style.zIndex = "10";
+		div.appendChild(img);
+
+		p.innerHTML = "INGENIERIAS";
+		p.style.width = "20vh";
+		p.style.margin = "0px";
+		p.style.fontFamily = "RobotoSlabM";
+		p.style.color = "#b61546";
+		p.style.padding = "0px";
+		div.appendChild(p);
+
+		div.style.position = "absolute";
+		div.style.bottom = "0px";
+		div.style.right = "0px";
+		div.style.left = "0px";
+
+		div.style.margin = "0px";
+		div.style.padding = "0px";
+
+		div.style.display = "flex";
+		div.style.flexDirection = "row"; // Cambiar a flex-direction: row
+		div.style.alignItems = "center";
+		div.style.justifyContent = "center";
+		div.style.width = "100%";
+		div.style.height = "20vh";
+
+		// Agregar la clase para la transición de opacidad
+		div.classList.add("fade-in");
+
+		document.body.appendChild(div);
+
+		// Forzar el cambio de opacidad después de un corto tiempo
+		setTimeout(function () {
+			div.style.opacity = "1";
+		}, 500); // Puedes ajustar el tiempo aquí
+	}, 10000); // Esperar 5 segundos (5000 milisegundos)
+});
+
+
+
 
 backgroundImage.onload = function () {
 	// Cuando la imagen cargue, dibújala en el lienzo
@@ -19,7 +67,7 @@ backgroundImage.src = 'img/fondoune.png'; // Reemplaza 'ruta/de/la/imagen.jpg' c
 
 		
 		opts = {
-			strings: ['FELIZ DÍA', '  DE   ', 'LAS MAMÁS',],
+			strings: ['FELIZ DÍA', '   DE    ', ' LA MAMÁ ',],
 			charSize: 80,
 			charSpacing: 70,
 			lineHeight: 80,
@@ -51,7 +99,7 @@ backgroundImage.src = 'img/fondoune.png'; // Reemplaza 'ruta/de/la/imagen.jpg' c
 			letterContemplatingWaitTime: 360,
 			balloonSpawnTime: 20,
 			balloonBaseInflateTime: 10,
-			balloonAddedInflateTime: 10,
+			balloonAddedInflateTime: 2,
 			balloonBaseSize: 20,
 			balloonAddedSize: 30,
 			balloonBaseVel: .4,
