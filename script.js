@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		div.style.flexDirection = "row"; // Cambiar a flex-direction: row
 		div.style.alignItems = "center";
 		div.style.justifyContent = "center";
-		div.style.width = "100%";
+		div.style.width = c.width/2;
 		div.style.height = "20vh";
 
 		// Agregar la clase para la transición de opacidad
